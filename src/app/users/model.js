@@ -9,7 +9,7 @@ const userSchema = new Schema( {
     password: { type: String, required: true },
     name: { type: String, required: true },
     age: { type: Number, required: true, min: 18 },
-    sex: { type: String, required: true, enum: [ "male", "female" ] },
+    sex: { type: String, required: true, enum: [ "male", "female" ] }
 }, {
     timestamps: true,
 } );
