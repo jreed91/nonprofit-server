@@ -19,6 +19,7 @@ const router = express.Router( );
 *    @apiParam {[Skills]} skills
 *    @apiParam {String} organization_id The project's organization_id is required.
 *    @apiParam {String} project_id  The project's ID is required.
+*    @apiParam {String} type  The project's type is required.
 *    @apiParam {[Volunteers]} volunteers
 *    @apiExample {response} Example response:
 *       {
@@ -43,6 +44,7 @@ router.post( "/", controller.create );
 *    @apiParam {[Skills]} skills
 *    @apiParam {String} organization_id
 *    @apiParam {String} project_id
+*    @apiParam {String} type  The project's type is required.
 *    @apiParam {[Volunteers]} volunteers
 */
 router.put( "/:id", controller.update );
@@ -55,7 +57,7 @@ router.delete( "/:id", controller.delete );
 
 /**
 *    @apiGroup Project
-*    @api {get} / Displaying the list with existing project.
+*    @api {get} / Displaying the list of projects.
 */
 router.get( "/", controller.list );
 

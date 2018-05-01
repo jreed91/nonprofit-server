@@ -3,6 +3,7 @@ const logger = require( "../../utilities/logger" );
 const repository = require( "./repository" );
 
 exports.register = async ( req, res ) => {
+    console.log(req.body)
     const { user } = req;
 
     if ( user ) {
@@ -10,6 +11,7 @@ exports.register = async ( req, res ) => {
         res.preconditionFailed( "existing_user" );
         return;
     }
+    
 
     try {
         const savedUser = await repository.saveUser( req.body );

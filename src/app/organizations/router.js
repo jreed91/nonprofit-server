@@ -19,6 +19,8 @@ const router = express.Router( );
 *    @apiParam {String} email
 *    @apiParam {String} address
 *    @apiParam {String} website
+*    @apiParam {String} aboutUs
+*    @apiParam {String} orgThumbnail
 *    @apiParam {String} organization_id  The organization's ID is required.
 *    @apiExample {response} Example response:
 *       {
@@ -29,7 +31,9 @@ const router = express.Router( );
 *            "email": "test@test.com",
 *            "address": "111 N 8th Street Des Moines, IA 50309",
 *            "website": "www.nonprofit.org",
-*            "organization_id": "123"
+*            "organization_id": "123",
+*            "abouUs": "This is the about us information for the org"
+*            "orgThumbnail": "url"
 *           }
 *      }
 */
@@ -44,6 +48,8 @@ router.post( "/", controller.create );
 *    @apiParam {String} email
 *    @apiParam {String} address
 *    @apiParam {String} website
+*    @apiParam {String} aboutUs
+*    @apiParam {String} orgThumbnail
 */
 router.put( "/:id", controller.update );
 

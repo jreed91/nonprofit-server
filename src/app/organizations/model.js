@@ -9,6 +9,8 @@ const organizationSchema = new Schema( {
     email: { type: String, required: false },
     address: { type: String, required: false },
     website: { type: String, required: false },
+    aboutUs: { type: String, required: false },
+    orgThumbnail: { type: String, required: false }
 }, {
     timestamps: true,
 } );

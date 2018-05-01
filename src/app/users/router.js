@@ -14,19 +14,16 @@ const router = express.Router( );
 /**
 *    @apiGroup User
 *    @api {post} /registration Adding an user to the db.
-*    @apiParam {String} id  User ID required.
-*    @apiParam {String} name  Mandatory name.
-*    @apiParam {Number} age  Mandatory age. Minimum 18.
-*    @apiParam {String} sex  Mandatory sex.
+*    @apiParam {String} username  Mandatory name.
+*    @apiParam {String} email  Mandatory email.
+*    @apiParam {String} password  Mandatory password.
 *    @apiExample {response} Example response:
 *       {
 *         "user": {
 *            "id": 123456789,
 *            "username": "user123"
 *            "password": "pass123"
-*            "name": "Ana",
-*            "sex": "female",
-*            "age": 30
+*            "type": "volunteer"
 *           }
 *      }
 */
@@ -40,6 +37,7 @@ router.post( "/registration", controller.register );
 *    @apiParam {String} name  Mandatory name.
 *    @apiParam {Number} age  Mandatory age. Minimum 18.
 *    @apiParam {String} sex  Mandatory sex.
+*    @apiParam {String} type
 */
 router.put( "/edit", validateToken, controller.edit );
 

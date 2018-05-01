@@ -16,7 +16,8 @@ const ProjectSchema = new Schema( {
     active: { type: Boolean, required: true },
     skills: { type: [SkillsSchema], required: false },
     organization_id: { type: mongoose.Schema.Types.ObjectId, ref: "Organization" },
-    volunteers: { type: [VolunteersSchema], required: false }
+    volunteers: { type: [VolunteersSchema], required: false },
+    type: { type: String, required: true}
 }, {
     timestamps: true,
 } );

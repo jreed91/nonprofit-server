@@ -9,12 +9,13 @@ const saveUser = ( data ) => {
 };
 
 const editUser = ( user, data ) => {
-    const { name, sex, age } = data;
+    const { name, sex, age, type } = data;
     const currentUser = user;
 
     currentUser.name = name;
     currentUser.sex = sex;
     currentUser.age = age;
+    currentUser.type = type;
     return user.save( );
 };
 
