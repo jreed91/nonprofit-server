@@ -5,8 +5,7 @@ const Project = mongoose.model( "Project" );
 
 const createOrganization = async ( data ) => {
     const organization = new Organization( data );
-    const query = await organization.save();
-    return query;
+    await organization.save();
 };
 
 const findOrganizations = () => Organization.find( );
@@ -17,7 +16,7 @@ const deleteOrganization = ( id ) => Organization.deleteOne( { _id: id } );
 
 const updateOrganization = async ( id, data ) => {
     const organization = Organization.findOne( { _id: id } );
-    const query = await Organization.updateOne( data, organization );
+    await Organization.updateOne( data, organization );
 };
 
 const findRelatedProjects = ( id ) => Project.find( { organization_id: id } );

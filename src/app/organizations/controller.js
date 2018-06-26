@@ -1,9 +1,7 @@
-const utilities = require( "../../utilities" );
 const repository = require( "./repository" );
 
 exports.create = async( req, res ) => {
     try {
-        const { user } = req;
         const organization = await repository.createOrganization(req.body );
         res.success(organization);
     } catch ( err ) {
@@ -14,7 +12,7 @@ exports.create = async( req, res ) => {
 exports.update = ( req, res ) => {
     try {
         const details = repository.updateOrganization( req.params.id, req.body );
-        res.success( );
+        res.success( details );
     } catch ( err ) {
         res.send( err );
     }
@@ -23,7 +21,7 @@ exports.update = ( req, res ) => {
 exports.delete = ( req, res ) => {
     try {
         const details = repository.deleteOrganization( req.params.id );
-        res.success( );
+        res.success( details );
     } catch ( err ) {
         res.send( err );
     }

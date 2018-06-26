@@ -1,8 +1,6 @@
 const mongoose = require( "mongoose" );
 
 const Project = mongoose.model( "Project" );
-const Skill = mongoose.model("Skill")
-const Volunteer = mongoose.model("Volunteer")
 
 const createProject = async ( data ) => {
 
@@ -14,10 +12,7 @@ const createProject = async ( data ) => {
 const addVolunteer = async (data) => {
     const project = Project.find( { _id: data.project_id });
     const newValues = {$push: {volunteers: {sub: data.sub} } };
-    const query = await Project.updateOne(newValues, project, (err, res) => {
-        console.log(err);
-        console.log(res);
-    })
+    await Project.updateOne(newValues, project);
 }
 
 const findProjects = () => Project.find( );
@@ -28,7 +23,7 @@ const deleteProject = ( id ) => Project.deleteOne( {_id: id } );
 
 const updateProject = async ( id, data ) => {
     const project = Project.findOne( {_id: id} );
-    const query = await Project.updateOne(data, project);
+    await Project.updateOne(data, project);
 }
 
 module.exports = {
