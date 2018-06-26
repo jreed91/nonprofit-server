@@ -4,10 +4,7 @@ const Schema = mongoose.Schema;
 
 const SkillsSchema = new Schema({ name: String });
 const VolunteersSchema = new Schema({ 
-    user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-    volunteer_id: { type: mongoose.Schema.Types.ObjectId, ref: "Volunteer" },
-    signUpDate: { type: Date, required: true },
-    selected: { type: Boolean, required: true, default: false }
+    sub: { type: String }
  });
 
 const ProjectSchema = new Schema( {

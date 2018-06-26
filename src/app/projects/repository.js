@@ -11,6 +11,15 @@ const createProject = async ( data ) => {
     return query;
 };
 
+const addVolunteer = async (data) => {
+    const project = Project.find( { _id: data.project_id });
+    const newValues = {$push: {volunteers: {sub: data.sub} } };
+    const query = await Project.updateOne(newValues, project, (err, res) => {
+        console.log(err);
+        console.log(res);
+    })
+}
+
 const findProjects = () => Project.find( );
 
 const findDetails = ( id ) => Project.findOne( { _id: id } );
@@ -27,5 +36,6 @@ module.exports = {
     findProjects,
     findDetails,
     deleteProject,
-    updateProject
+    updateProject,
+    addVolunteer,
 };

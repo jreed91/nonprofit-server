@@ -46,3 +46,12 @@ exports.detail = async ( req, res ) => {
         res.send( err );
     }
 };
+
+exports.relatedProjects = async ( req, res ) => {
+    try {
+        const relatedProjects = await repository.findRelatedProjects( req.params.id );
+        res.success( relatedProjects );
+    } catch ( err ) {
+        res.send( err );
+    }
+}

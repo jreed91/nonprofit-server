@@ -37,6 +37,19 @@ router.post( "/", controller.create );
 
 /**
 *    @apiGroup Project
+*    @api {post} /addVolunteer Creating new project.
+*    @apiParam {String} sub  The sub is required.
+*    @apiExample {response} Example response:
+*       {
+*         "project": {
+*            "volunteers": [{sub: 123}]
+*           }
+*      }
+*/
+router.post( "/addVolunteer", controller.addVolunteer);
+
+/**
+*    @apiGroup Project
 *    @api {put} /:id Updating an existing project.
 *    @apiParam {String} name
 *    @apiParam {String} description

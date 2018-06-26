@@ -71,4 +71,10 @@ router.get( "/", controller.list );
 */
 router.get( "/:id", controller.detail );
 
+/**
+*    @apiGroup Organization Projects
+*    @api {get} /:id/projects Displaying details of an existing organization.
+*/
+router.get( "/:id/projects", controller.relatedProjects );
+
 module.exports = router;

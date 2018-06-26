@@ -6,8 +6,8 @@ const projectRouter = require( "./projects/router" );
 const validateToken = require( "../middlewares/validateToken" );
 
 module.exports = ( app ) => {
-    app.use( "/organizations", organizationRouter )
-    app.use( "/projects", projectRouter )
+    app.use( "/organizations", organizationRouter );
+    app.use( "/projects", projectRouter );
     app.use( "/session", sessionRouter );
     app.use( "/users", usersRouter );
     app.use( "/articles", validateToken, articlesRouter );

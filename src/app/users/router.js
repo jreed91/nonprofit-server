@@ -14,9 +14,8 @@ const router = express.Router( );
 /**
 *    @apiGroup User
 *    @api {post} /registration Adding an user to the db.
-*    @apiParam {String} username  Mandatory name.
 *    @apiParam {String} email  Mandatory email.
-*    @apiParam {String} password  Mandatory password.
+*    @apiParam {String} type  Mandatory email.
 *    @apiExample {response} Example response:
 *       {
 *         "user": {
@@ -34,10 +33,8 @@ router.post( "/registration", controller.register );
 *    @api {put} /edit Edit the profile and filtering options.
 *    @apiDescription Useful to change profile information
 *    @apiParam {String} id  User ID required.
-*    @apiParam {String} name  Mandatory name.
-*    @apiParam {Number} age  Mandatory age. Minimum 18.
-*    @apiParam {String} sex  Mandatory sex.
-*    @apiParam {String} type
+*    @apiParam {String} email  Mandatory email.
+*    @apiParam {String} type  Mandatory email.
 */
 router.put( "/edit", validateToken, controller.edit );
 

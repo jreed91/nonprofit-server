@@ -11,6 +11,17 @@ exports.create = async( req, res ) => {
     }
 };
 
+exports.addVolunteer = async( req, res ) => {
+    try {
+        const body = req.body;
+        const res = await repository.addVolunteer( body );
+        console.log(res);
+        res.success(res);
+    } catch ( err ) {
+        res.send( err );
+    }
+};
+
 exports.update = ( req, res ) => {
     try {
         const details = repository.updateProject( req.params.id, req.body );

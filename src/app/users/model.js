@@ -4,10 +4,13 @@ const md5 = require( "md5" );
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema( {
+    sub: { type: String, required: true },
+    nickname: { type: String, required: false },
+    name: { type: String, required: false },
+    picture: { type: String, required: false },
+    updated_at: { type: String, required: false },
     email: { type: String, required: true },
-    password: { type: String, required: true },
-    username: { type: String, required: true },
-    type: { type: String, required: true }
+    email_verified: { type: Boolean, required: false}
 }, {
     timestamps: true,
 } );
